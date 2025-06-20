@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Roboto Slab", serif;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.hover-spin:hover {
+  animation: spin 2.5s linear infinite;
+}
+
+.hide-scrollbar {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer and Edge */
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Webkit (Chrome, Safari) */
+}
+
+.curve-outside {
+  box-shadow: 35px 35px 0 20px blue;
+  pointer-events: none;
+}
+
+.curve-top {
+  position: absolute;
+  right: -8px;
+  top: -53px;
+  width: 45px;
+  height: 45px;
+  background-color: transparent;
+  border-radius: 50%;
+  box-shadow: 20px 20px 0 0px white;
+  pointer-events: none;
+}
+.curve-bottom {
+  position: absolute;
+  right: -8px;
+  bottom: -53px;
+  width: 45px;
+  height: 45px;
+  background-color: transparent;
+  border-radius: 50%;
+  box-shadow: 20px -20px 0 0px white;
+  pointer-events: none;
+}
+
+.navigation {
+  position: absolute;
+  right: -25px;
+  bottom: -53px;
+  width: 45px;
+  height: 45px;
+  background-color: transparent;
+  border-radius: 50%;
+  box-shadow: 20px -20px 0 0px white;
+  pointer-events: none;
+}
+
+.navigation-top {
+  position: absolute;
+  right: -25px;
+  top: -53px;
+  width: 45px;
+  height: 45px;
+  background-color: transparent;
+  border-radius: 50%;
+  box-shadow: 20px 20px 0 0px white;
+  pointer-events: none;
+}
