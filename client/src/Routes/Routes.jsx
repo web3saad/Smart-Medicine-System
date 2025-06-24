@@ -16,6 +16,7 @@ import PlaceOrder from "../Pages/Home/PlaceOrder";
 import SingleProductCard from "./../Pages/SingleProductCard/SingleProductCard";
 import Prp from "./../Pages/products/Prp";
 import PrivateRoute from "./PrivateRoute";
+import Notification from "../Pages/Notification";
 
 export const router = createBrowserRouter([
   {
@@ -86,6 +87,11 @@ export const router = createBrowserRouter([
       {
         path: "order-confirmed",
         element: <OrderConfirmed />,
+      },
+
+      {
+        path: "notification",
+        element: <Notification />,
       },
     ],
   },

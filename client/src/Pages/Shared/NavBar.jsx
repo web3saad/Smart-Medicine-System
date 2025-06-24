@@ -80,6 +80,14 @@ const NavBar = () => {
               Product Request
             </Link>
           </li>
+          <li>
+            <Link
+              to="/notification"
+              className="text-white rounded-lg font-semibold"
+            >
+              Notification
+            </Link>
+          </li>
         </ul>
       </div>
 

@@ -8,7 +8,7 @@ const createProduct = async (payload: IProduct): Promise<IProduct> => {
   return result;
 };
 
-const getAllProducts = async (page: any, searchText: any, limit: any) => {
+const getAllProducts = async (page: any, searchText: any, limit: any, sort: any) => {
   const skip = Math.max(0, (page - 1) * limit);
   const searchQuery =
     searchText && searchText!='undefined'
@@ -21,7 +21,12 @@ const getAllProducts = async (page: any, searchText: any, limit: any) => {
           ],
         }
       : {};
-  const result = await Product.find(searchQuery).skip(skip).limit(limit);
+  let sortOption: Record<string, 1 | -1> = { createdAt: -1 };
+  if (sort) {
+    const key = sort.replace('-', '');
+    sortOption = { [key]: sort.startsWith('-') ? -1 : 1 };
+  }
+  const result = await Product.find(searchQuery).sort(sortOption).skip(skip).limit(limit);
   return result;
 };
 
